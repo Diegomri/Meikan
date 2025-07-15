@@ -55,7 +55,7 @@ namespace Meikan
             app.MapIdentityApi<User>();
             app.MapControllers();
 
-            await SeedingExtension.SeedAdminUser(app.Services, app.Configuration);
+            await Seeding.SeedAdminUser(app.Services, app.Configuration);
 
             app.Run();
         }
