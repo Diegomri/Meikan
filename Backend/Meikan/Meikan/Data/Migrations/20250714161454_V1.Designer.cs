@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Meikan.Data.Migrations
 {
-    [DbContext(typeof(UserContext))]
+    [DbContext(typeof(MeikanDbContext))]
     [Migration("20250714161454_V1")]
     partial class V1
     {

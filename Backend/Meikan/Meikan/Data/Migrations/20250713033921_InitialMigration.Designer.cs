@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Meikan.Data.Migrations
 {
-    [DbContext(typeof(UserContext))]
+    [DbContext(typeof(MeikanDbContext))]
     [Migration("20250713033921_InitialMigration")]
     partial class InitialMigration
     {

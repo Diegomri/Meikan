@@ -7,7 +7,7 @@ namespace Meikan
         public static void ApplyMigrations(this IApplicationBuilder app)
         {
             using IServiceScope scope = app.ApplicationServices.CreateScope();
-            using UserContext context = scope.ServiceProvider.GetRequiredService<UserContext>();
+            using Data.MeikanDbContext context = scope.ServiceProvider.GetRequiredService<Data.MeikanDbContext>();
             context.Database.Migrate();
         }   
     }

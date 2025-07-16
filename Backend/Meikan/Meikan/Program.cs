@@ -30,10 +30,10 @@ namespace Meikan
                 options.Password.RequiredLength = 6;
             })
             .AddRoles<IdentityRole>()
-            .AddEntityFrameworkStores<UserContext>()
+            .AddEntityFrameworkStores<MeikanDbContext>()
             .AddApiEndpoints();
 
-            builder.Services.AddDbContext<UserContext>(options => options.UseNpgsql(connectionString));
+            builder.Services.AddDbContext<MeikanDbContext>(options => options.UseNpgsql(connectionString));
 
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
