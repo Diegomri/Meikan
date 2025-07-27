@@ -4,6 +4,8 @@ using Meikan.Entities.Dtos;
 using Meikan.Entities.Models;
 using Meikan.Data;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.Routing;
+using Microsoft.EntityFrameworkCore;
 
 namespace Meikan.Controllers
 {
@@ -16,6 +18,13 @@ namespace Meikan.Controllers
         public ProductsController(MeikanDbContext context)
         {
             _context = context;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetProducts()
+        {
+            List<Product> products = await _context.Products.ToListAsync();
+            return Ok(products);
         }
 
         [HttpGet("{ProductId}")]

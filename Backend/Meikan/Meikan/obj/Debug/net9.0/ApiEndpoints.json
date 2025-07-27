@@ -117,6 +117,16 @@
   },
   {
     "ContainingType": "Meikan.Controllers.ProductsController",
+    "Method": "GetProducts",
+    "RelativePath": "api/Products",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Meikan.Controllers.ProductsController",
     "Method": "CreateProduct",
     "RelativePath": "api/Products",
     "HttpMethod": "POST",

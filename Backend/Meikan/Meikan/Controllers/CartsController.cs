@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
+//deescuentos
+//regalos por compras
+
 namespace Meikan.Controllers
 {
     [Route("api/[controller]")]

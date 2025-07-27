@@ -38,6 +38,26 @@ namespace Meikan
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin",
+                    builder =>
+                    {
+                        builder.WithOrigins("http://localhost:5173") // Replace with the actual origin of your React app
+                               .AllowAnyHeader()
+                               .AllowAnyMethod();
+                    });
+
+                // You can also add a more permissive policy for development
+                options.AddPolicy("AllowAllOrigins",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin() // Not recommended for production
+                               .AllowAnyHeader()
+                               .AllowAnyMethod();
+                    });
+            });
+
             var app = builder.Build();
 
             if (app.Environment.IsDevelopment())
@@ -48,6 +68,8 @@ namespace Meikan
             }
 
             app.UseHttpsRedirection();
+
+            app.UseCors("AllowAllOrigins");
 
             app.UseAuthentication();
             app.UseAuthorization();
