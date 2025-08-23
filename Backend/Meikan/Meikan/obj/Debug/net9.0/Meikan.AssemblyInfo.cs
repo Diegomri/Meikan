@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Meikan")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eb021f223a674e0fb87e5c8ac20286d76145205e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ff2ebfe35f6f182377e8adadda88f871e6602aed")]
 [assembly: System.Reflection.AssemblyProductAttribute("Meikan")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Meikan")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

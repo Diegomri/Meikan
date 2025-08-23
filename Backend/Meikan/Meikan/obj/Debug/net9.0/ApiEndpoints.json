@@ -1,15 +1,72 @@
 [
   {
+    "ContainingType": "Meikan.Program\u002B\u003C\u003Ec",
+    "Method": "\u003CMain\u003Eb__0_7",
+    "RelativePath": "api/account/info",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "Meikan.Entities.Dtos.UserInfoDto",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "EndpointName": "GetAccountInfo"
+  },
+  {
+    "ContainingType": "Meikan.Program\u002B\u003C\u003Ec",
+    "Method": "\u003CMain\u003Eb__0_9",
+    "RelativePath": "api/account/info",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updatedInfo",
+        "Type": "Meikan.Entities.Dtos.UpdateUserDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "UpdateAccountInfo"
+  },
+  {
     "ContainingType": "Meikan.Controllers.CartsController",
-    "Method": "CreateCart",
-    "RelativePath": "api/Carts",
+    "Method": "GetUserCart",
+    "RelativePath": "api/cart",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Meikan.Controllers.CartsController",
+    "Method": "AddProductToCart",
+    "RelativePath": "api/cart/products",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "cartDto",
-        "Type": "Meikan.Entities.Dtos.CreateCartDto",
+        "Name": "dto",
+        "Type": "Meikan.Entities.Dtos.AddToCartDto",
         "IsRequired": true
       }
     ],
@@ -17,14 +74,14 @@
   },
   {
     "ContainingType": "Meikan.Controllers.CartsController",
-    "Method": "GetCartsById",
-    "RelativePath": "api/Carts/{CartId}",
-    "HttpMethod": "GET",
+    "Method": "RemoveAllProductItems",
+    "RelativePath": "api/cart/products/{productId}",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "CartId",
+        "Name": "productId",
         "Type": "System.Guid",
         "IsRequired": true
       }
@@ -33,55 +90,42 @@
   },
   {
     "ContainingType": "Meikan.Controllers.CartsController",
-    "Method": "AddProducts",
-    "RelativePath": "api/Carts/AddProducts",
-    "HttpMethod": "PUT",
+    "Method": "RemoveOneProductItem",
+    "RelativePath": "api/cart/products/{productId}/one",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "CartId",
+        "Name": "productId",
         "Type": "System.Guid",
-        "IsRequired": false
-      },
-      {
-        "Name": "ProductId",
-        "Type": "System.Guid",
-        "IsRequired": false
-      },
-      {
-        "Name": "Quantity",
-        "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Meikan.Controllers.CartsController",
-    "Method": "DeleteProducts",
-    "RelativePath": "api/Carts/DeleteProducts",
-    "HttpMethod": "PUT",
-    "IsController": true,
+    "ContainingType": "Meikan.Program\u002B\u003C\u003Ec",
+    "Method": "\u003CMain\u003Eb__0_8",
+    "RelativePath": "api/login",
+    "HttpMethod": "POST",
+    "IsController": false,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "CartId",
-        "Type": "System.Guid",
-        "IsRequired": false
-      },
-      {
-        "Name": "ProductId",
-        "Type": "System.Guid",
-        "IsRequired": false
-      },
-      {
-        "Name": "Quantity",
-        "Type": "System.Int32",
-        "IsRequired": false
+        "Name": "request",
+        "Type": "Microsoft.AspNetCore.Identity.Data.LoginRequest",
+        "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "Login"
   },
   {
     "ContainingType": "Meikan.Controllers.OrdersController",
@@ -122,7 +166,23 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "line",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "order",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -143,6 +203,22 @@
   },
   {
     "ContainingType": "Meikan.Controllers.ProductsController",
+    "Method": "DeleteMultipleProducts",
+    "RelativePath": "api/Products",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Meikan.Entities.Dtos.DeleteProductsDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Meikan.Controllers.ProductsController",
     "Method": "GetProductsById",
     "RelativePath": "api/Products/{ProductId}",
     "HttpMethod": "GET",
@@ -156,6 +232,81 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Meikan.Controllers.ProductsController",
+    "Method": "AddProductToCart",
+    "RelativePath": "api/Products/AddToCart",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Meikan.Entities.Dtos.AddToCartDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Meikan.Controllers.ProductsController",
+    "Method": "UploadImage",
+    "RelativePath": "api/Products/upload-image",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Meikan.Program\u002B\u003C\u003Ec",
+    "Method": "\u003CMain\u003Eb__0_6",
+    "RelativePath": "api/register",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Meikan.Entities.Dtos.CreateUserDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 201
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 409
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      }
+    ],
+    "EndpointName": "CustomRegister"
   },
   {
     "ContainingType": "Microsoft.AspNetCore.Routing.IdentityApiEndpointRouteBuilderExtensions\u002B\u003C\u003Ec__1\u00601[[Meikan.Entities.Models.User, Meikan, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
@@ -252,6 +403,23 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "Meikan.Program\u002B\u003C\u003Ec",
+    "Method": "\u003CMain\u003Eb__0_5",
+    "RelativePath": "logout",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "Logout"
   },
   {
     "ContainingType": "Microsoft.AspNetCore.Routing.IdentityApiEndpointRouteBuilderExtensions\u002B\u003C\u003Ec__1\u00601[[Meikan.Entities.Models.User, Meikan, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",

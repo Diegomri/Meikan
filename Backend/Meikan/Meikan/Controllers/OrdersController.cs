@@ -1,8 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Meikan.Data;
 using Meikan.Entities.Dtos;
 using Meikan.Entities.Models;
-using Meikan.Data;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace Meikan.Controllers
@@ -13,9 +14,12 @@ namespace Meikan.Controllers
     {
         private readonly MeikanDbContext _context;
 
-        public OrdersController(MeikanDbContext context)
+        private readonly UserManager<User> _userManager;
+
+        public OrdersController(MeikanDbContext context, UserManager<User> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         [HttpGet("{OrderId}")]

@@ -27,11 +27,13 @@ namespace Meikan.Data
             modelBuilder.Entity<CartProducts>()
                 .HasOne(c => c.Cart)
                 .WithMany(cp => cp.CartProducts)
-                .HasForeignKey(cp => cp.CartId);
+                .HasForeignKey(cp => cp.CartId)
+                .OnDelete(DeleteBehavior.Cascade);
             modelBuilder.Entity<CartProducts>()
                 .HasOne(p => p.Product)
                 .WithMany(cp => cp.CartProducts)
-                .HasForeignKey(cp => cp.ProductId);
+                .HasForeignKey(cp => cp.ProductId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
 
     }

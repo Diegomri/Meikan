@@ -138,3 +138,12 @@ C:\Users\diego\Desktop\Proyectos\Meikan\Backend\Meikan\Meikan\bin\Debug\net9.0\S
 C:\Users\diego\Desktop\Proyectos\Meikan\Backend\Meikan\Meikan\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\diego\Desktop\Proyectos\Meikan\Backend\Meikan\Meikan\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\diego\Desktop\Proyectos\Meikan\Backend\Meikan\Meikan\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\diego\Desktop\Proyectos\Meikan\Backend\Meikan\Meikan\bin\Debug\net9.0\Meikan.staticwebassets.runtime.json
+C:\Users\diego\Desktop\Proyectos\Meikan\Backend\Meikan\Meikan\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\diego\Desktop\Proyectos\Meikan\Backend\Meikan\Meikan\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\diego\Desktop\Proyectos\Meikan\Backend\Meikan\Meikan\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\diego\Desktop\Proyectos\Meikan\Backend\Meikan\Meikan\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\diego\Desktop\Proyectos\Meikan\Backend\Meikan\Meikan\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\diego\Desktop\Proyectos\Meikan\Backend\Meikan\Meikan\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\diego\Desktop\Proyectos\Meikan\Backend\Meikan\Meikan\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\diego\Desktop\Proyectos\Meikan\Backend\Meikan\Meikan\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll

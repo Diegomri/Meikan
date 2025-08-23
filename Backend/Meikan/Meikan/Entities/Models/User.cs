@@ -10,5 +10,6 @@ namespace Meikan.Entities.Models
         public string? Street { get; set; }
         public string? Address { get; set; }
 
+
     }
 }
